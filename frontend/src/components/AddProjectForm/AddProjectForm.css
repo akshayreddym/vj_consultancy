@@ -1,0 +1,189 @@
+/* ─── Card ─── */
+.add-project-form__card {
+  background: #FFFFFF;
+  border: 1px solid #E3E1D9;
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+
+/* ─── Success banner ─── */
+.add-project-form__success {
+  background: #EAF3DE;
+  border: 1px solid #C8DCAD;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-project-form__success-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5C8A2A;
+  flex-shrink: 0;
+}
+
+.add-project-form__success-text {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 450;
+  color: #3A5C1A;
+  line-height: 1.4;
+}
+
+/* ─── Field group ─── */
+.add-project-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.add-project-form__field + .add-project-form__field {
+  margin-top: 20px;
+}
+
+/* ─── Labels ─── */
+.add-project-form__label {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #4A4A44;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.add-project-form__label-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4A4699;
+  flex-shrink: 0;
+}
+
+/* ─── Inputs (shared) ─── */
+.add-project-form__input,
+.add-project-form__textarea,
+.add-project-form__select {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #1A1A1A;
+  background: #FAFAF8;
+  border: 1px solid #E3E1D9;
+  border-radius: 10px;
+  padding: 10px 14px;
+  min-height: 40px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.add-project-form__input::placeholder,
+.add-project-form__textarea::placeholder {
+  color: #B0AEA6;
+}
+
+.add-project-form__input:focus,
+.add-project-form__textarea:focus,
+.add-project-form__select:focus {
+  border-color: #4A4699;
+  box-shadow: 0 0 0 3px rgba(74, 70, 153, 0.12);
+}
+
+/* ─── Textarea ─── */
+.add-project-form__textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* ─── Select ─── */
+.add-project-form__select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%237A7872' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.add-project-form__select option[value=""] {
+  color: #B0AEA6;
+}
+
+/* ─── Inline row (Budget / Duration / Deadline) ─── */
+.add-project-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.add-project-form__row .add-project-form__field + .add-project-form__field {
+  margin-top: 0;
+}
+
+/* ─── Submit area ─── */
+.add-project-form__actions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.add-project-form__submit {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14.5px;
+  font-weight: 550;
+  color: #FFFFFF;
+  background: #4A4699;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 28px;
+  min-height: 42px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+  outline: none;
+}
+
+.add-project-form__submit:hover:not(:disabled) {
+  background: #3D3980;
+}
+
+.add-project-form__submit:focus-visible {
+  box-shadow: 0 0 0 3px rgba(74, 70, 153, 0.3);
+}
+
+.add-project-form__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.add-project-form__helper {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #9A9890;
+  line-height: 1.4;
+}
+
+/* ─── Responsive: collapse row below 640px ─── */
+@media (max-width: 640px) {
+  .add-project-form__card {
+    padding: 24px 20px;
+  }
+
+  .add-project-form__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .add-project-form__row .add-project-form__field + .add-project-form__field {
+    margin-top: 20px;
+  }
+}

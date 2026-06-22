@@ -1,0 +1,30 @@
+.add-project-page {
+  min-height: 100vh;
+  background-color: #FAFAF8;
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px 80px;
+  box-sizing: border-box;
+}
+
+.add-project-page__container {
+  width: 100%;
+  max-width: 720px;
+}
+
+.add-project-page__title {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin: 0 0 6px;
+  letter-spacing: -0.2px;
+}
+
+.add-project-page__subtitle {
+  font-family: -apple-system, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #7A7872;
+  margin: 0 0 28px;
+}
