@@ -1,0 +1,85 @@
+.summary-card {
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border-color: #d1d5db;
+}
+
+.summary-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted, #6b7280);
+  text-transform: capitalize;
+}
+
+.summary-card-count {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main, #111827);
+  line-height: 1;
+}
+
+.summary-card-icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover .summary-card-icon-container {
+  transform: scale(1.05);
+}
+
+.summary-card-svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Status themes/colors for the icons */
+.icon-published {
+  stroke: #4f46e5;
+}
+.summary-card:has(.icon-published) .summary-card-icon-container {
+  background-color: #eef2ff;
+}
+
+.icon-active {
+  stroke: #d97706;
+}
+.summary-card:has(.icon-active) .summary-card-icon-container {
+  background-color: #fffbeb;
+}
+
+.icon-completed {
+  stroke: #16a34a;
+}
+.summary-card:has(.icon-completed) .summary-card-icon-container {
+  background-color: #f0fdf4;
+}
+
+.icon-delivered {
+  stroke: #9333ea;
+}
+.summary-card:has(.icon-delivered) .summary-card-icon-container {
+  background-color: #fcf5ff;
+}

@@ -1,4 +1,12 @@
-/* Dashboard layout wrappers (copied for consistency across dashboard pages) */
+:root {
+  --primary-color: #4f46e5;
+  --bg-color: #f9fafb;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+}
+
 .dashboard-layout {
   min-height: 100vh;
   display: flex;
@@ -15,7 +23,7 @@
   min-width: 0; /* Prevents overflow issues */
 }
 
-/* Mobile top navbar styling */
+/* Mobile top navbar */
 .dashboard-navbar {
   display: none;
   height: 60px;
@@ -78,18 +86,22 @@
   line-height: 1.5;
 }
 
-/* Add project form wrapper container styling */
-.add-project-container-card {
-  background-color: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #e5e7eb);
-  border-radius: 12px;
-  padding: 32px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  max-width: 800px;
-  width: 100%;
+/* Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-/* Responsive adjustments */
+/* Details Grid (Timeline + Action Cards) */
+.details-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .dashboard-main {
     margin-left: 0;
@@ -99,11 +111,17 @@
   
   .dashboard-navbar {
     display: flex;
-    margin: -24px -24px 0 -24px;
+    margin: -24px -24px 0 -24px; /* Align to container edges */
   }
 
-  .add-project-container-card {
-    padding: 24px;
+  .summary-grid {
+    grid-template-columns: repeat(2, 2fr); /* Tablet: 2x2 grid */
+    gap: 20px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr; /* Stack detailed reports */
+    gap: 20px;
   }
 }
 
@@ -125,7 +143,12 @@
     font-size: 13px;
   }
 
-  .add-project-container-card {
-    padding: 16px;
+  .summary-grid {
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    gap: 16px;
+  }
+
+  .details-grid {
+    gap: 16px;
   }
 }

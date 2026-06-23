@@ -1,7 +1,21 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Dashboard from './pages/Dashboard/Dashboard';
+import MyProjects from './pages/MyProjects/MyProjects';
 import AddProject from './pages/AddProject/AddProject';
 
 function App() {
-  return <AddProject />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/my-projects" element={<MyProjects />} />
+        <Route path="/add-project" element={<AddProject />} />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
