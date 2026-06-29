@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import projectRoutes from "./Routes/projectRoutes.js";
 import dashboardRoutes from "./Routes/dashboardRoutes.js";
+
 const app = express();
 
 app.use(cors());

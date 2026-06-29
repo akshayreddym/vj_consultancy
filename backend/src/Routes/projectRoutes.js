@@ -1,9 +1,10 @@
 import express from "express";
 import pool from "../config/db.js";
+import verifyToken from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/", verifyToken, async (req, res) => {
     try {
 
         const {
@@ -102,7 +103,7 @@ router.post("/", async (req, res) => {
 });
 
 //----Get all projects------------
-router.get("/", async (req, res) => {
+router.get("/", verifyToken, async (req, res) => {
 
     try {
 
@@ -122,7 +123,7 @@ router.get("/", async (req, res) => {
     }
 
 });
-router.get("/:id", async (req, res) => {
+router.get("/:id", verifyToken, async (req, res) => {
 
     try {
 
@@ -158,7 +159,7 @@ router.get("/:id", async (req, res) => {
     }
 
 });
-router.put("/:id", async (req, res) => {
+router.put("/:id", verifyToken, async (req, res) => {
 
     try {
 

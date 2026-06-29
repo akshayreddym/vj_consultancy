@@ -1,9 +1,10 @@
 import express from "express";
 import pool from "../config/db.js";
+import verifyToken from "../middleware/verifyToken.js";
 
 const router = express.Router();
 
-router.get("/stats", async (req, res) => {
+router.get("/stats",verifyToken, async (req, res) => {
 
     try {
 
@@ -41,7 +42,7 @@ router.get("/stats", async (req, res) => {
 
 });
 
-router.get("/activities", async (req, res) => {
+router.get("/activities", verifyToken, async (req, res) => {
 
     try {
 
