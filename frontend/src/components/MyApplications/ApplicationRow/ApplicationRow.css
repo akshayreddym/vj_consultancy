@@ -1,0 +1,200 @@
+.application-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.application-row td {
+  padding: 16px 18px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  background-color: #ffffff;
+  color: #334155;
+}
+
+/* Hover effects */
+.application-row:hover td {
+  background-color: #faf5ff; /* Slight purple background */
+}
+
+/* Project cell styles */
+.project-app-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-app-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-bg-applied {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.status-bg-under-review {
+  background-color: rgba(234, 88, 12, 0.1);
+  color: #ea580c;
+}
+
+.status-bg-shortlisted {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: #16a34a;
+}
+
+.status-bg-interview-scheduled {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.status-bg-selected {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+}
+
+.status-bg-rejected {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.project-app-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-app-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.project-app-desc {
+  font-size: 0.775rem;
+  color: #64748b;
+}
+
+/* Date cell styles */
+.date-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.primary-date {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.relative-date-sub {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Badges */
+.status-badge-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.status-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Badges Colors */
+/* Applied: Gray */
+.badge-applied {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+.badge-applied .status-badge-dot {
+  background-color: #64748b;
+}
+
+/* Under Review: Orange */
+.badge-review {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+.badge-review .status-badge-dot {
+  background-color: #ea580c;
+}
+
+/* Shortlisted: Green */
+.badge-shortlisted {
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+.badge-shortlisted .status-badge-dot {
+  background-color: #16a34a;
+}
+
+/* Interview Scheduled: Purple */
+.badge-interview {
+  background-color: #f5f3ff;
+  color: #6d28d9;
+}
+.badge-interview .status-badge-dot {
+  background-color: #8b5cf6;
+}
+
+/* Selected: Blue */
+.badge-selected {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+.badge-selected .status-badge-dot {
+  background-color: #2563eb;
+}
+
+/* Rejected: Red */
+.badge-rejected {
+  background-color: #fdf2f8;
+  color: #9d174d;
+}
+.badge-rejected .status-badge-dot {
+  background-color: #ef4444;
+}
+
+/* Last Updated */
+.updated-date {
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+/* Action button: outlined purple */
+.track-progress-btn {
+  background-color: transparent;
+  color: var(--primary-color, #4f46e5);
+  border: 1.5px solid var(--primary-color, #4f46e5);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+.track-progress-btn:hover {
+  background-color: var(--primary-color, #4f46e5);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.2);
+}

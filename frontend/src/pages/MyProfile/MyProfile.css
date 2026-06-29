@@ -1,0 +1,190 @@
+/* Parent Page Layout */
+.my-profile-layout {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f8fafc; /* VJ Consultancy background tint */
+  width: 100%;
+}
+
+.my-profile-main {
+  flex: 1;
+  margin-left: 260px; /* Account for Sidebar width */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Page Header & Utility Toolbar */
+.profile-utility-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.toolbar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profile-page-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main, #111827);
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.profile-page-subtitle {
+  font-size: 14px;
+  color: var(--text-muted, #6b7280);
+  margin: 0;
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Utility buttons */
+.utility-action-btn {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.delete-test-btn {
+  background-color: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #ffe4e6;
+}
+
+.delete-test-btn:hover {
+  background-color: #ffe4e6;
+  border-color: #fecdd3;
+  transform: translateY(-0.5px);
+}
+
+.restore-test-btn {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #dcfce7;
+}
+
+.restore-test-btn:hover {
+  background-color: #dcfce7;
+  border-color: #bbf7d0;
+  transform: translateY(-0.5px);
+}
+
+/* Wrapper for all sections */
+.profile-sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-sections-wrapper.is-editing-mode .profile-header-card,
+.profile-sections-wrapper.is-editing-mode .personal-info-card,
+.profile-sections-wrapper.is-editing-mode .skills-section-card,
+.profile-sections-wrapper.is-editing-mode .professional-links-card,
+.profile-sections-wrapper.is-editing-mode .resume-section-card {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.01), 0 4px 6px -2px rgba(0, 0, 0, 0.005);
+}
+
+/* Split Columns Grid (2 unequal or equal cards) */
+.profile-split-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Bottom Information Banner */
+.profile-bottom-info-banner {
+  background-color: #f5f3ff;
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 2px rgba(79, 70, 229, 0.05);
+}
+
+.info-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.banner-info-icon {
+  color: #4f46e5;
+  flex-shrink: 0;
+}
+
+.banner-info-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6d28d9;
+  line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .my-profile-main {
+    margin-left: 0;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .dashboard-navbar {
+    display: flex;
+    margin: -24px -24px 0 -24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .profile-split-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-utility-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar-right {
+    width: 100%;
+  }
+
+  .utility-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .my-profile-main {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .dashboard-navbar {
+    margin: -16px -16px 0 -16px;
+  }
+}

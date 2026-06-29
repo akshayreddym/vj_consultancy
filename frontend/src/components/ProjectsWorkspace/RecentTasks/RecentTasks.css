@@ -1,0 +1,119 @@
+.recent-tasks-container {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(51, 65, 85, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.workspace-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.tasks-table-wrapper {
+  overflow-x: auto;
+}
+
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.tasks-table th {
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.task-col {
+  width: 45%;
+}
+
+.assignee-col {
+  width: 25%;
+}
+
+.status-col {
+  width: 15%;
+}
+
+.due-col {
+  width: 15%;
+}
+
+.tasks-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-weight: 500;
+}
+
+.task-row:hover td {
+  background-color: #faf5ff;
+}
+
+.task-name {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.task-assignee {
+  color: #475569;
+}
+
+.task-due-date {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.status-badge-task {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.status-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Status variants */
+.badge-completed {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+.badge-completed .status-badge-dot {
+  background-color: #16a34a;
+}
+
+.badge-in-progress {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+.badge-in-progress .status-badge-dot {
+  background-color: #2563eb;
+}
+
+.badge-pending {
+  background-color: #fff7ed;
+  color: #ea580c;
+}
+.badge-pending .status-badge-dot {
+  background-color: #ea580c;
+}

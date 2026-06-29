@@ -1,0 +1,31 @@
+.applications-header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.applications-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-main, #111827);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.applications-subtitle {
+  font-size: 15px;
+  color: var(--text-muted, #6b7280);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .applications-title {
+    font-size: 22px;
+  }
+
+  .applications-subtitle {
+    font-size: 13px;
+  }
+}

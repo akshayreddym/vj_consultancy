@@ -1,0 +1,239 @@
+.resume-section-card {
+  background: var(--card-bg, #ffffff);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.025);
+  border: 1px solid var(--border-color, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.resume-section-card.card-editing-mode {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.02), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+  background-color: #fafbfd;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 16px;
+}
+
+.action-hint {
+  font-size: 12px;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.resume-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* File info row */
+.resume-file-info-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.resume-file-info-row:hover {
+  border-color: #cbd5e1;
+}
+
+.file-icon-box {
+  background-color: #fef2f2;
+  color: #ef4444;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #fee2e2;
+}
+
+.file-pdf-icon {
+  color: #ef4444;
+}
+
+.file-meta-box {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.file-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main, #111827);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-date {
+  font-size: 12px;
+  color: var(--text-muted, #6b7280);
+}
+
+.resume-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Empty resume state inside card */
+.no-resume-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  text-align: center;
+  gap: 10px;
+}
+
+.no-resume-icon {
+  color: #94a3b8;
+}
+
+.no-resume-text {
+  font-size: 14px;
+  color: var(--text-muted, #6b7280);
+  margin: 0;
+}
+
+/* Buttons */
+.resume-btn {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.download-btn {
+  background-color: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+}
+
+.download-btn:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border-color: #94a3b8;
+}
+
+.remove-resume-btn {
+  background-color: #ffffff;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+}
+
+.remove-resume-btn:hover {
+  background-color: #fef2f2;
+  border-color: #fecdd3;
+  transform: translateY(-0.5px);
+}
+
+.upload-action-box {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.upload-trigger-btn {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.upload-trigger-btn.active {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+.upload-trigger-btn.active:hover {
+  background-color: #4338ca;
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.2);
+  transform: translateY(-1px);
+}
+
+.upload-trigger-btn.disabled {
+  background-color: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Animations */
+.transition-fade {
+  animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-file-info-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 16px;
+  }
+  
+  .file-icon-box {
+    align-self: center;
+  }
+
+  .resume-actions-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .download-btn,
+  .remove-resume-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .upload-action-box {
+    width: 100%;
+  }
+
+  .upload-trigger-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

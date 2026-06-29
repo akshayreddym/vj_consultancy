@@ -1,0 +1,273 @@
+.projects-row {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-row td {
+  padding: 16px 18px;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effects */
+.projects-row:hover td {
+  background-color: #faf5ff; /* Slight purple background color */
+}
+
+.projects-row:hover {
+  /* Elevate row slightly */
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.04);
+  transform: translateY(-1px);
+}
+
+/* First and last td border radii for clean hover aesthetics */
+.projects-row:hover td:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.projects-row:hover td:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Project Info Column */
+.project-info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.project-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-bg-in-progress {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.status-bg-completed {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.status-bg-on-hold {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+}
+
+.project-row-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.project-name-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-row-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.project-row-client {
+  font-size: 0.775rem;
+  color: #64748b;
+}
+
+/* Domain Column */
+.project-row-domain {
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Status Column & Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* Blue for In Progress */
+.status-in-progress {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+.status-in-progress .status-dot {
+  background-color: #2563eb;
+}
+
+/* Green for Completed */
+.status-completed {
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+.status-completed .status-dot {
+  background-color: #16a34a;
+}
+
+/* Orange for On Hold */
+.status-on-hold {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+.status-on-hold .status-dot {
+  background-color: #ea580c;
+}
+
+/* Progress Column */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 120px;
+}
+
+.progress-percentage {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 6px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background-color: var(--primary-color, #4f46e5);
+  transition: width 0.4s ease;
+}
+
+.progress-value-on-hold {
+  font-weight: 500;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Deadline Column */
+.project-row-deadline {
+  font-weight: 500;
+  color: #475569;
+  font-size: 0.85rem;
+}
+
+/* Action Column & Button */
+.row-actions-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Workspace Action Buttons */
+.workspace-btn {
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+/* In Progress: Purple filled button */
+.btn-open-workspace {
+  background-color: var(--primary-color, #4f46e5);
+  color: #ffffff;
+  border: 1.5px solid var(--primary-color, #4f46e5);
+}
+
+.btn-open-workspace:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+}
+
+/* Completed: Green outlined button */
+.btn-view-summary {
+  background-color: transparent;
+  color: #16a34a;
+  border: 1.5px solid #16a34a;
+}
+
+.btn-view-summary:hover {
+  background-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+}
+
+/* On Hold: Gray disabled button */
+.btn-on-hold {
+  background-color: #f1f5f9;
+  color: #94a3b8;
+  border: 1.5px solid #e2e8f0;
+  cursor: not-allowed;
+}
+
+/* On Hold Row styling */
+.projects-row.row-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.projects-row.row-disabled td {
+  cursor: not-allowed;
+}
+
+/* Override hover elevation and back color for disabled rows */
+.projects-row.row-disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.projects-row.row-disabled:hover td {
+  background-color: #ffffff !important;
+}
+
+.more-options-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.more-options-btn:hover {
+  background-color: #f1f5f9;
+  color: #475569;
+}

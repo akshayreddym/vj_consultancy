@@ -1,0 +1,131 @@
+.status-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+  transition: all 0.2s ease;
+}
+
+.summary-card-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px -2px rgba(51, 65, 85, 0.06);
+}
+
+.summary-card-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary-text-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-card-label {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-card-count {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.summary-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Pastel Theme Classes */
+/* Total: Purple/Blue */
+.summary-total {
+  border-left: 4px solid var(--primary-color, #4f46e5);
+}
+.summary-total .summary-icon-box {
+  background-color: rgba(79, 70, 229, 0.08);
+  color: var(--primary-color, #4f46e5);
+}
+
+/* Under Review: Orange */
+.summary-review {
+  border-left: 4px solid #ea580c;
+}
+.summary-review .summary-icon-box {
+  background-color: rgba(234, 88, 12, 0.08);
+  color: #ea580c;
+}
+
+/* Shortlisted: Green */
+.summary-shortlisted {
+  border-left: 4px solid #16a34a;
+}
+.summary-shortlisted .summary-icon-box {
+  background-color: rgba(22, 163, 74, 0.08);
+  color: #16a34a;
+}
+
+/* Interview Scheduled: Purple */
+.summary-interview {
+  border-left: 4px solid #8b5cf6;
+}
+.summary-interview .summary-icon-box {
+  background-color: rgba(139, 92, 246, 0.08);
+  color: #8b5cf6;
+}
+
+/* Selected: Blue */
+.summary-selected {
+  border-left: 4px solid #2563eb;
+}
+.summary-selected .summary-icon-box {
+  background-color: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+}
+
+/* Rejected: Red */
+.summary-rejected {
+  border-left: 4px solid #ef4444;
+}
+.summary-rejected .summary-icon-box {
+  background-color: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+}
+
+@media (max-width: 1200px) {
+  .status-summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .status-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

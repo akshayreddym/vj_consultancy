@@ -1,0 +1,58 @@
+.projects-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.projects-table th {
+  position: sticky;
+  top: 0;
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.col-project {
+  width: 35%;
+}
+
+.col-domain {
+  width: 20%;
+}
+
+.col-status {
+  width: 15%;
+}
+
+.col-progress {
+  width: 15%;
+}
+
+.col-deadline {
+  width: 10%;
+}
+
+.col-action {
+  width: 5%;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .projects-table th {
+    padding: 12px 14px;
+  }
+}

@@ -1,0 +1,77 @@
+.projects-tabs-container {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.projects-tabs-container::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.projects-tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-color, #4f46e5);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+  border-radius: 2px;
+}
+
+.projects-tab-btn:hover {
+  color: var(--text-main, #111827);
+}
+
+.projects-tab-btn.active {
+  color: var(--primary-color, #4f46e5);
+  font-weight: 600;
+}
+
+.projects-tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: #f1f5f9;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.projects-tab-btn.active .tab-count {
+  background-color: rgba(79, 70, 229, 0.1);
+  color: var(--primary-color, #4f46e5);
+}
+
+.projects-tab-btn:hover .tab-count {
+  background-color: #e2e8f0;
+  color: #334155;
+}
