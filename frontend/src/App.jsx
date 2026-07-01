@@ -26,6 +26,12 @@ import BrowseProjects from "./pages/BrowseProject/BrowseProject";
 import StudentDashboard from "./pages/StudentDashboard/StudentDashboard";
 import MyApplications from "./pages/MyApplications/MyApplications";
 
+//coordinator pages
+import CoordinatorDashboard from "./pages/CoordinatorDashboard/CoordinatorDashboard";
+import ApplicationManagement from "./pages/ApplicationManagement/ApplicationManagement";
+import StudentEvaluation from "./pages/StudentEvaluation/StudentEvaluation";
+import ProjectLifeCycle from "./pages/ProjectLifeCycle/ProjectLifeCycle";
+import ProjectWorkspace from "./pages/ProjectWorkspace/ProjectWorkspace";
 function App() {
   return (
     <GoogleOAuthProvider
@@ -92,6 +98,31 @@ function App() {
                 path="/"
                 element={<Navigate to="/dashboard" replace />}
               />
+              <Route
+                 path="/coordinator/dashboard"
+                 element={<CoordinatorDashboard />}
+                />  
+                <Route
+                path="/coordinator/application-management"
+                   element={<ApplicationManagement />}
+                  />
+                <Route
+                   path="/coordinator/applications"
+                   element={<Navigate to="/coordinator/application-management" replace />}
+                 />
+                  <Route
+                    path="/coordinator/evaluation"
+                    element={<StudentEvaluation />}
+                  />
+                  <Route
+                    path="/coordinator/lifecycle"
+                    element={<ProjectLifeCycle />}
+                  />
+                  <Route
+                    path="/coordinator/project-workspace"
+                    element={<ProjectWorkspace />}
+                  />
+              
 
               <Route
                 path="*"

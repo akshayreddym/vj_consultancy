@@ -8,7 +8,6 @@ import DeliverablesSection from '../../components/CompletedProjectSummary/Delive
 import TimelineSection from '../../components/CompletedProjectSummary/TimelineSection/TimelineSection';
 import FeedbackSection from '../../components/CompletedProjectSummary/FeedbackSection/FeedbackSection';
 import ProjectStatistics from '../../components/CompletedProjectSummary/ProjectStatistics/ProjectStatistics';
-import EmptySummary from '../../components/CompletedProjectSummary/EmptySummary/EmptySummary';
 import './CompletedProjectSummary.css';
 
 const MOCK_COMPLETED_PROJECT = {
@@ -119,8 +118,6 @@ export default function CompletedProjectSummary() {
           <span className="navbar-brand">VJ Consultancy</span>
         </header>
 
-        {project ? (
-          <>
             {/* Header info blocks */}
             <SummaryHeader project={project} />
 
@@ -140,10 +137,6 @@ export default function CompletedProjectSummary() {
                 <ProjectStatistics statistics={project.statistics} />
               </div>
             </div>
-          </>
-        ) : (
-          <EmptySummary />
-        )}
       </div>
     </div>
   );

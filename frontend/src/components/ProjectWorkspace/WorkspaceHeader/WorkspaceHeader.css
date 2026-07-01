@@ -1,0 +1,121 @@
+.workspace-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 24px;
+}
+
+.workspace-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4f46e5;
+  cursor: pointer;
+  padding: 6px 0;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+
+.workspace-back-btn:hover {
+  color: #7c3aed;
+}
+
+.workspace-back-btn .back-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.workspace-back-btn:hover .back-icon {
+  transform: translateX(-4px);
+}
+
+.workspace-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.workspace-project-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.workspace-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.workspace-meta-dot {
+  color: #d1d5db;
+}
+
+.workspace-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-on-track {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.status-completed {
+  background-color: #eff6ff;
+  color: #1e40af;
+}
+
+.status-at-risk {
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.status-delayed {
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.workspace-export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.workspace-export-btn:hover {
+  background-color: #f5f3ff;
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+.export-icon {
+  width: 16px;
+  height: 16px;
+}

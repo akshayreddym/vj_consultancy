@@ -1,0 +1,236 @@
+.interview-section-card {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.eval-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main, #111827);
+  margin: 0;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  padding-bottom: 12px;
+}
+
+.interview-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Wrapper layouts */
+.select-wrapper, .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.form-select-control, .form-input-control {
+  width: 100%;
+  padding: 10px 12px 10px 38px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  font-size: 14px;
+  color: var(--text-main, #111827);
+  outline: none;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.form-select-control:focus, .form-input-control:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.form-select-control:disabled, .form-input-control:disabled {
+  background-color: #f8fafc;
+  color: var(--text-muted, #6b7280);
+  cursor: not-allowed;
+}
+
+/* Input with button action */
+.input-with-action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-with-action .form-input-control {
+  padding-left: 14px;
+  padding-right: 100px; /* Space for generate button */
+}
+
+.text-link {
+  font-family: monospace;
+  color: #4f46e5;
+  font-weight: 500;
+}
+
+.generate-meet-btn {
+  position: absolute;
+  right: 6px;
+  background-color: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.generate-meet-btn:hover {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+}
+
+.btn-spark-icon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Date and time grid */
+.form-date-time-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-date-time-row .form-input-control {
+  padding-left: 38px;
+}
+
+/* Action button */
+.send-invitation-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #7c3aed;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.25);
+  transition: all 0.2s ease;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.send-invitation-btn:hover {
+  background-color: #6d28d9;
+  transform: translateY(-1px);
+}
+
+.send-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Floating Success Toast */
+.toast-notification-success {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background-color: #ffffff;
+  border: 1px solid #a7f3d0;
+  border-left: 6px solid #10b981;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  z-index: 9999;
+  max-width: 360px;
+  animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-icon-wrapper {
+  width: 24px;
+  height: 24px;
+  background-color: #ecfdf5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-check-icon {
+  width: 14px;
+  height: 14px;
+  color: #10b981;
+}
+
+.toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toast-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.toast-desc {
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

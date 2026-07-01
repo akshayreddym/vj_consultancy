@@ -1,0 +1,205 @@
+.workspace-documents-tab {
+  width: 100%;
+}
+
+.documents-tab-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+/* Modern Document Table Layout */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.modern-documents-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.modern-documents-table th {
+  background-color: #f8fafc;
+  padding: 16px 24px;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 1px solid #e5e7eb;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.modern-documents-table td {
+  padding: 18px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
+  vertical-align: middle;
+}
+
+.table-row-hover {
+  transition: background-color 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background-color: #f8fafc;
+}
+
+.modern-documents-table tr:last-child td {
+  border-bottom: none;
+}
+
+.doc-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 250px;
+}
+
+.doc-file-icon {
+  width: 20px;
+  height: 20px;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.doc-title-text {
+  font-weight: 600;
+  color: #111827;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-date-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6b7280;
+}
+
+.date-icon {
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+}
+
+.doc-milestone-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Badges */
+.doc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.doc-approved {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+
+.doc-pending {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.doc-changes {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.badge-status-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+/* Document actions */
+.doc-actions-row {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.doc-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.doc-review-btn {
+  color: #7c3aed;
+  border-color: #ddd6fe;
+  background-color: #f5f3ff;
+}
+
+.doc-review-btn:hover {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+}
+
+.doc-download-btn {
+  color: #6b7280;
+  padding: 8px;
+}
+
+.doc-download-btn:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.btn-action-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.empty-documents-view {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.empty-view-text {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}

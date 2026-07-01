@@ -10,7 +10,7 @@ const SUGGESTED_SKILLS = [
   "AWS", "PostgreSQL", "Firebase", "Redux", "GraphQL"
 ];
 
-export default function SkillsSection({ skills, isEditing, onAddSkill, onRemoveSkill }) {
+export default function SkillsSection({ skills, isEditing, onAddSkill, onRemoveSkill, readOnly }) {
   const [newSkill, setNewSkill] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const PlusIcon = Icons.Plus;
@@ -51,7 +51,9 @@ export default function SkillsSection({ skills, isEditing, onAddSkill, onRemoveS
 
       <div className="skills-container">
         {skills.length === 0 ? (
-          <p className="no-skills-msg">No skills added yet. Switch to Edit Mode to add skills.</p>
+          <p className="no-skills-msg">
+            {readOnly ? "No skills added yet." : "No skills added yet. Switch to Edit Mode to add skills."}
+          </p>
         ) : (
           <div className="skills-chips-wrapper">
             {skills.map((skill) => (

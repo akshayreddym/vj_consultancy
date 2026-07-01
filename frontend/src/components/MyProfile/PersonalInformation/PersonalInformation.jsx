@@ -2,7 +2,7 @@ import React from 'react';
 import * as Icons from 'lucide-react';
 import './PersonalInformation.css';
 
-export default function PersonalInformation({ profile, isEditing, onChange, onSave, onCancel }) {
+export default function PersonalInformation({ profile, isEditing, onChange, onSave, onCancel, readOnly }) {
   const UserIcon = Icons.User;
   const MailIcon = Icons.Mail;
   const PhoneIcon = Icons.Phone;
@@ -183,7 +183,7 @@ export default function PersonalInformation({ profile, isEditing, onChange, onSa
       </div>
 
       {/* Action Buttons ONLY in Edit Mode */}
-      {isEditing && (
+      {isEditing && !readOnly && (
         <div className="form-actions-row transition-fade">
           <button
             type="button"

@@ -94,6 +94,51 @@ export default function Sidebar({ isOpen, onClose }) {
       )
     }
   ];
+  const coordinatorItems = [
+  {
+    name: "Coordinator Dashboard",
+    path: "/coordinator/dashboard",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="menu-icon">
+        <rect x="3" y="3" width="7" height="9" />
+        <rect x="14" y="3" width="7" height="5" />
+        <rect x="14" y="12" width="7" height="9" />
+        <rect x="3" y="16" width="7" height="5" />
+      </svg>
+    )
+  },
+  {
+    name: "Application Management",
+    path: "/coordinator/applications",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="menu-icon">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+      </svg>
+    )
+  },
+  {
+    name: "Student Evaluation",
+    path: "/coordinator/evaluation",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="menu-icon">
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    )
+  },
+  {
+    name: "Project Lifecycle",
+    path: "/coordinator/lifecycle",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="menu-icon">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+      </svg>
+    )
+  }
+];
 
   return (
     <>
@@ -149,6 +194,33 @@ export default function Sidebar({ isOpen, onClose }) {
               </li>
             ))}
           </ul>
+          <div
+  className="sidebar-section-title"
+  style={{ marginTop: "16px" }}
+>
+  COORDINATOR
+</div>
+
+<ul className="sidebar-menu">
+  {coordinatorItems.map((item) => (
+    <li key={item.name}>
+      <NavLink
+        to={item.path}
+        className={({ isActive }) =>
+          `sidebar-menu-btn ${isActive ? "active" : ""}`
+        }
+        style={{ textDecoration: "none" }}
+        onClick={() => {
+          if (onClose) onClose();
+        }}
+      >
+        {item.icon}
+        <span className="menu-text">{item.name}</span>
+      </NavLink>
+    </li>
+  ))}
+</ul>
+
         </nav>
         
         <div className="sidebar-footer">

@@ -7,7 +7,6 @@ import RecentTasks from '../../components/ProjectsWorkspace/RecentTasks/RecentTa
 import RecentUploads from '../../components/ProjectsWorkspace/RecentUploads/RecentUploads';
 import ActivityFeed from '../../components/ProjectsWorkspace/ActivityFeed/ActivityFeed';
 import ProjectNotes from '../../components/ProjectsWorkspace/ProjectNotes/ProjectNotes';
-import EmptyWorkspace from '../../components/ProjectsWorkspace/EmptyWorkspace/EmptyWorkspace';
 import { CheckSquare, Folder, Calendar, Activity, Info, Users, Cpu, Layers } from 'lucide-react';
 import './ProjectsWorkspace.css';
 
@@ -90,10 +89,7 @@ export default function ProjectsWorkspace() {
           <span className="navbar-brand">VJ Consultancy</span>
         </header>
 
-        {!project ? (
-          <EmptyWorkspace />
-        ) : (
-          <div className="workspace-content">
+        <div className="workspace-content">
             {/* Header section */}
             <WorkspaceHeader project={project} />
 
@@ -328,7 +324,6 @@ export default function ProjectsWorkspace() {
               </div>
             )}
           </div>
-        )}
       </div>
     </div>
   );

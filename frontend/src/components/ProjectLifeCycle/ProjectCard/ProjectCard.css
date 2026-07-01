@@ -1,0 +1,263 @@
+.lifecycle-project-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lifecycle-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-color: #ddd6fe;
+}
+
+.card-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #f5f3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c3aed;
+}
+
+.project-briefcase-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.project-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-on-track {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.status-completed {
+  background-color: #eff6ff;
+  color: #1e40af;
+}
+
+.status-at-risk {
+  background-color: #fffbeb;
+  color: #92400e;
+}
+
+.status-delayed {
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+.project-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-card-client {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Progress bar styles */
+.project-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.progress-lbl-text {
+  font-weight: 600;
+  color: #475569;
+}
+
+.progress-percent-val {
+  font-weight: 700;
+  color: #111827;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.bg-on-track {
+  background-color: #10b981;
+}
+
+.bg-completed {
+  background-color: #3b82f6;
+}
+
+.bg-at-risk {
+  background-color: #f59e0b;
+}
+
+.bg-delayed {
+  background-color: #ef4444;
+}
+
+/* Meta Details Section */
+.project-meta-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px dashed #e2e8f0;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.meta-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-info-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.meta-icon-users {
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+}
+
+.student-avatars-stack {
+  display: flex;
+  align-items: center;
+}
+
+.stack-avatar-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.student-avatars-stack img:first-child {
+  margin-left: 0;
+}
+
+.stack-avatar-more {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.meta-info-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.stat-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-meta-icon {
+  width: 14px;
+  height: 14px;
+  color: #94a3b8;
+}
+
+/* Button styles */
+.open-workspace-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #f5f3ff;
+  color: #7c3aed;
+  border: 1px solid #ddd6fe;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.open-workspace-btn:hover {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border-color: #7c3aed;
+  box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.15);
+}
+
+.open-workspace-icon {
+  width: 14px;
+  height: 14px;
+}

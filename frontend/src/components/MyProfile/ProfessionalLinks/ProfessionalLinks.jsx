@@ -39,7 +39,7 @@ const LinkedinIcon = (props) => (
   </svg>
 );
 
-export default function ProfessionalLinks({ links, isEditing, onChange }) {
+export default function ProfessionalLinks({ links, isEditing, onChange, readOnly }) {
   const GlobeIcon = Icons.Globe;
   const CodeIcon = Icons.Code;
   const TerminalIcon = Icons.Terminal;

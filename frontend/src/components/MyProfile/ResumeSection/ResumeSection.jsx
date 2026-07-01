@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import * as Icons from 'lucide-react';
 import './ResumeSection.css';
 
-export default function ResumeSection({ resume, isEditing, onUploadSimulate }) {
+export default function ResumeSection({ resume, isEditing, onUploadSimulate, readOnly }) {
   const FileTextIcon = Icons.FileText;
   const DownloadIcon = Icons.Download;
   const UploadCloudIcon = Icons.UploadCloud;
@@ -86,29 +86,33 @@ export default function ResumeSection({ resume, isEditing, onUploadSimulate }) {
         ) : (
           <div className="no-resume-box transition-fade">
             <FileTextIcon size={32} className="no-resume-icon" />
-            <p className="no-resume-text">No resume uploaded. Switch to Edit Mode to upload.</p>
+            <p className="no-resume-text">
+              {readOnly ? "No resume uploaded." : "No resume uploaded. Switch to Edit Mode to upload."}
+            </p>
           </div>
         )}
 
         {/* Upload/Replace Button */}
-        <div className="upload-action-box">
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            accept=".pdf,.doc,.docx"
-            style={{ display: 'none' }}
-          />
-          <button
-            type="button"
-            className={`resume-btn upload-trigger-btn ${isEditing ? 'active' : 'disabled'}`}
-            onClick={handleUploadClick}
-            disabled={!isEditing}
-          >
-            <UploadCloudIcon size={16} />
-            <span>{resume.resumeName ? 'Replace Resume' : 'Upload New Resume'}</span>
-          </button>
-        </div>
+        {!readOnly && (
+          <div className="upload-action-box">
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              accept=".pdf,.doc,.docx"
+              style={{ display: 'none' }}
+            />
+            <button
+              type="button"
+              className={`resume-btn upload-trigger-btn ${isEditing ? 'active' : 'disabled'}`}
+              onClick={handleUploadClick}
+              disabled={!isEditing}
+            >
+              <UploadCloudIcon size={16} />
+              <span>{resume.resumeName ? 'Replace Resume' : 'Upload New Resume'}</span>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

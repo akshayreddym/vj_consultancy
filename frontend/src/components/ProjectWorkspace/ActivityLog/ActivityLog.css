@@ -1,0 +1,109 @@
+.workspace-activity-tab {
+  width: 100%;
+}
+
+.activity-tab-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 24px 0;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.timeline-left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 40px;
+}
+
+.activity-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 2px solid #ffffff;
+  flex-shrink: 0;
+}
+
+.upload-circle { background-color: #eff6ff; color: #3b82f6; }
+.approved-circle { background-color: #ecfdf5; color: #10b981; }
+.changes-circle { background-color: #fef2f2; color: #ef4444; }
+.completed-circle { background-color: #f5f3ff; color: #7c3aed; }
+.default-circle { background-color: #f8fafc; color: #64748b; }
+
+.act-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.timeline-line-connector {
+  width: 2px;
+  background-color: #e2e8f0;
+  flex: 1;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.timeline-right-col {
+  flex: 1;
+  padding-bottom: 24px;
+}
+
+.timeline-bubble-content {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timeline-message-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.timeline-time-label {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.empty-activity-view {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.empty-view-text {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}

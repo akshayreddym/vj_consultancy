@@ -1,0 +1,54 @@
+/* Page styling */
+.lifecycle-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.lifecycle-page-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.lifecycle-page-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  margin-top: 6px;
+}
+
+.lifecycle-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.project-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.lifecycle-content {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .lifecycle-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

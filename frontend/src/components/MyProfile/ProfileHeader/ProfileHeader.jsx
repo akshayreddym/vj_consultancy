@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import * as Icons from 'lucide-react';
 import './ProfileHeader.css';
 
-export default function ProfileHeader({ profile, isEditing, onChange, onEditClick, onSave, onCancel }) {
+export default function ProfileHeader({ profile, isEditing, onChange, onEditClick, onSave, onCancel, readOnly }) {
   const MailIcon = Icons.Mail;
   const PhoneIcon = Icons.Phone;
   const MapPinIcon = Icons.MapPin;
@@ -149,35 +149,37 @@ export default function ProfileHeader({ profile, isEditing, onChange, onEditClic
         </div>
 
         {/* Global Action Buttons */}
-        <div className="header-actions-container">
-          {isEditing ? (
-            <div className="header-actions-group transition-fade">
+        {!readOnly && (
+          <div className="header-actions-container">
+            {isEditing ? (
+              <div className="header-actions-group transition-fade">
+                <button
+                  type="button"
+                  className="header-action-btn cancel-btn-purple"
+                  onClick={onCancel}
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  className="header-action-btn save-btn-purple"
+                  onClick={onSave}
+                >
+                  Save Changes
+                </button>
+              </div>
+            ) : (
               <button
                 type="button"
-                className="header-action-btn cancel-btn-purple"
-                onClick={onCancel}
+                className="edit-profile-btn"
+                onClick={onEditClick}
               >
-                Cancel
+                <EditIcon size={16} />
+                <span>Edit Profile</span>
               </button>
-              <button
-                type="button"
-                className="header-action-btn save-btn-purple"
-                onClick={onSave}
-              >
-                Save Changes
-              </button>
-            </div>
-          ) : (
-            <button
-              type="button"
-              className="edit-profile-btn"
-              onClick={onEditClick}
-            >
-              <EditIcon size={16} />
-              <span>Edit Profile</span>
-            </button>
-          )}
-        </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* About Me Details */}

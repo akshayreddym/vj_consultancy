@@ -4,7 +4,6 @@ import ApplicationsHeader from '../../components/MyApplications/ApplicationsHead
 import StatusSummary from '../../components/MyApplications/StatusSummary/StatusSummary';
 import StatusChips from '../../components/MyApplications/StatusChips/StatusChips';
 import ApplicationsTable from '../../components/MyApplications/ApplicationsTable/ApplicationsTable';
-import EmptyApplications from '../../components/MyApplications/EmptyApplications/EmptyApplications';
 import ApplicationDetailsDrawer from '../../components/MyApplications/ApplicationDetailsDrawer/ApplicationDetailsDrawer';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import './MyApplications.css';
@@ -313,10 +312,7 @@ export default function MyApplications() {
             setActiveFilter={setActiveFilter}
           />
 
-          {/* Table list or Empty results state */}
-          {paginatedApps.length > 0 ? (
-            <>
-              <ApplicationsTable
+          <ApplicationsTable
                 applications={paginatedApps}
                 onViewDetails={handleViewDetails}
               />
@@ -359,10 +355,6 @@ export default function MyApplications() {
                   </div>
                 </div>
               )}
-            </>
-          ) : (
-            <EmptyApplications />
-          )}
         </section>
       </div>
 

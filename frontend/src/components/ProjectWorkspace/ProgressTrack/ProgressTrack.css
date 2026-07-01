@@ -1,0 +1,350 @@
+.workspace-progress-tab {
+  width: 100%;
+}
+
+.progress-dashboard-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Gauge Card Left */
+.progress-gauge-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.progress-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  width: 100%;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.progress-circle-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.progress-circle-bg {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.progress-circle-fill-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #7c3aed;
+  line-height: 1;
+}
+
+.progress-circle-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.progress-circular-conic {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.progress-gauge-meta {
+  width: 100%;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 16px;
+}
+
+.gauge-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gauge-meta-item .meta-icon {
+  width: 20px;
+  height: 20px;
+  color: #7c3aed;
+  flex-shrink: 0;
+}
+
+.meta-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.meta-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2px;
+}
+
+/* Right Details cards */
+.progress-details-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.progress-details-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.details-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.details-metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.metric-number {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.metric-percentage {
+  font-size: 14px;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.details-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.details-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.purple-fill { background-color: #7c3aed; }
+.green-fill { background-color: #10b981; }
+
+.milestones-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.check-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.check-icon.completed { color: #10b981; }
+.check-icon.pending { color: #f59e0b; }
+
+.checklist-lbl.done {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+/* Student workload stats */
+.students-contribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contribution-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.contribution-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.student-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.summary-avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.student-text-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-summary-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.student-summary-role {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.contribution-progress-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 250px;
+}
+
+.contribution-progress-lbl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.contribution-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.contribution-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+/* Pending Reviews Card styling */
+.pending-reviews-card {
+  padding: 16px 20px;
+  border-left: 5px solid #7c3aed;
+}
+
+.pending-reviews-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pending-reviews-icon {
+  width: 24px;
+  height: 24px;
+  color: #7c3aed;
+  flex-shrink: 0;
+}
+
+.pending-reviews-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pending-reviews-lbl {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pending-reviews-desc {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+.pending-count-badge {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 800;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.pending-count-badge.alert-active {
+  background-color: #f5f3ff;
+  color: #7c3aed;
+}
+
+@media (max-width: 768px) {
+  .progress-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

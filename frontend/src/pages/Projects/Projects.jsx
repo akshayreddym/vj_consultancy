@@ -5,7 +5,6 @@ import ProjectsHeader from '../../components/Projects/ProjectsHeader/ProjectsHea
 import ProjectsSearchBar from '../../components/Projects/ProjectsSearchBar/ProjectsSearchBar';
 import ProjectsTabs from '../../components/Projects/ProjectsTabs/ProjectsTabs';
 import ProjectsTable from '../../components/Projects/ProjectsTable/ProjectsTable';
-import EmptyProject from '../../components/Projects/EmptyProject/EmptyProject';
 import './Projects.css';
 
 const MOCK_PROJECTS = [
@@ -164,15 +163,10 @@ export default function Projects() {
             counts={counts}
           />
 
-          {/* Project list table or Empty state */}
-          {filteredProjects.length > 0 ? (
-            <ProjectsTable
-              projects={filteredProjects}
-              onOpenProject={handleOpenProject}
-            />
-          ) : (
-            <EmptyProject />
-          )}
+          <ProjectsTable
+            projects={filteredProjects}
+            onOpenProject={handleOpenProject}
+          />
         </section>
       </div>
       {toastMessage && (

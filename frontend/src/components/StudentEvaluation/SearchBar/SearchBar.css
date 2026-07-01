@@ -1,0 +1,63 @@
+.eval-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 10px;
+  padding: 2px 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.eval-search-container:focus-within {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.eval-search-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted, #6b7280);
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
+.eval-search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-main, #111827);
+  outline: none;
+}
+
+.eval-search-input::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+.eval-search-clear {
+  background: none;
+  border: none;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted, #6b7280);
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.eval-search-clear:hover {
+  background-color: #f3f4f6;
+  color: var(--text-main, #111827);
+}
+
+.eval-clear-icon {
+  width: 14px;
+  height: 14px;
+}

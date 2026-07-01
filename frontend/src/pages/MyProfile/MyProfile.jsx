@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import * as Icons from 'lucide-react';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import ProfileHeader from '../../components/MyProfile/ProfileHeader/ProfileHeader';
@@ -8,7 +9,6 @@ import AcademicInformation from '../../components/MyProfile/AcademicInformation/
 import SkillsSection from '../../components/MyProfile/SkillsSection/SkillsSection';
 import ProfessionalLinks from '../../components/MyProfile/ProfessionalLinks/ProfessionalLinks';
 import ResumeSection from '../../components/MyProfile/ResumeSection/ResumeSection';
-import EmptyProfile from '../../components/MyProfile/EmptyProfile/EmptyProfile';
 import './MyProfile.css';
 
 const INITIAL_MOCK_DATA = {
@@ -49,12 +49,109 @@ const INITIAL_MOCK_DATA = {
   }
 };
 
+const MOCK_STUDENT_PROFILES = {
+  'stud-1': {
+    fullName: "Srinivas Rao",
+    role: "AI Integration",
+    email: "srinivas.rao@vjti.ac.in",
+    phone: "+91 98201 12345",
+    dob: "2003-05-12",
+    gender: "Male",
+    location: "Mumbai, Maharashtra",
+    address: "Matunga, Mumbai - 400019",
+    aboutMe: "Pre-final year B.Tech student at VJTI. Passionate about machine learning, generative AI, and backend integrations. Experienced in Python, LangChain, and FastAPI.",
+    educationSummary: "B.Tech in Computer Engineering",
+    profilePhoto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop",
+    skills: ['Python', 'React', 'LangChain', 'FastAPI', 'PyTorch', 'Git', 'SQL'],
+    resume: {
+      resumeName: "Srinivas_Rao_Resume.pdf",
+      uploadedDate: "15 May 2026"
+    },
+    links: {
+      portfolio: "https://srinivas.dev",
+      github: "https://github.com/srinivasrao",
+      linkedin: "https://linkedin.com/in/srinivasrao",
+      leetcode: "https://leetcode.com/srinivasrao",
+      codechef: ""
+    },
+    academic: {
+      college: "Veermata Jijabai Technological Institute (VJTI)",
+      degree: "Bachelor of Technology (B.Tech)",
+      branch: "Computer Engineering",
+      year: "4th Year",
+      batch: "2023 - 2027",
+      cgpa: "9.4",
+      isVerified: true
+    }
+  },
+  'stud-2': {
+    fullName: "Karan Patil",
+    role: "Backend API Developer",
+    email: "karan.patil@vjti.ac.in",
+    phone: "+91 97022 44556",
+    dob: "2003-11-24",
+    gender: "Male",
+    location: "Thane, Maharashtra",
+    address: "Naupada, Thane West, Maharashtra - 400602",
+    aboutMe: "Computer Engineering undergraduate at VJTI. Focuses on data engineering, database optimization, and scalable backend RESTful APIs.",
+    educationSummary: "B.Tech in Computer Engineering",
+    profilePhoto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=128&h=128&fit=crop",
+    skills: ['Python', 'SQL', 'Apache Spark', 'Tableau', 'Kafka', 'FastAPI', 'Node.js'],
+    resume: {
+      resumeName: "Karan_Patil_Resume.pdf",
+      uploadedDate: "20 May 2026"
+    },
+    links: {
+      portfolio: "https://karan.codes",
+      github: "https://github.com/karanpatil",
+      linkedin: "https://linkedin.com/in/karanpatil",
+      leetcode: "https://leetcode.com/karanpatil",
+      codechef: ""
+    },
+    academic: {
+      college: "Veermata Jijabai Technological Institute (VJTI)",
+      degree: "Bachelor of Technology (B.Tech)",
+      branch: "Computer Engineering",
+      year: "4th Year",
+      batch: "2023 - 2027",
+      cgpa: "9.2",
+      isVerified: true
+    }
+  }
+};
+
 export default function MyProfile() {
+  const location = useLocation();
+  const readOnly = location.state?.readOnly || false;
+  const navStudent = location.state?.student;
+
   const [profile, setProfile] = useState(INITIAL_MOCK_DATA);
   const [editableProfile, setEditableProfile] = useState(INITIAL_MOCK_DATA);
   const [isEditing, setIsEditing] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isProfileDeleted, setIsProfileDeleted] = useState(false); // For empty state preview
+
+  useEffect(() => {
+    if (navStudent) {
+      setIsEditing(false);
+      const found = MOCK_STUDENT_PROFILES[navStudent.id] || Object.values(MOCK_STUDENT_PROFILES).find(p => p.fullName === navStudent.name);
+      if (found) {
+        setProfile(found);
+        setEditableProfile(found);
+      } else {
+        const merged = {
+          ...INITIAL_MOCK_DATA,
+          fullName: navStudent.name || INITIAL_MOCK_DATA.fullName,
+          role: navStudent.role || INITIAL_MOCK_DATA.role,
+          profilePhoto: navStudent.photo || INITIAL_MOCK_DATA.profilePhoto,
+        };
+        setProfile(merged);
+        setEditableProfile(merged);
+      }
+    } else {
+      setProfile(INITIAL_MOCK_DATA);
+      setEditableProfile(INITIAL_MOCK_DATA);
+    }
+  }, [navStudent]);
 
   const InfoIcon = Icons.Info;
   const RefreshCwIcon = Icons.RefreshCw;
@@ -70,6 +167,7 @@ export default function MyProfile() {
 
   // 1. Enter Edit Mode: Copy profile to editableProfile
   const handleEditClick = () => {
+    if (readOnly) return;
     setEditableProfile(JSON.parse(JSON.stringify(profile)));
     setIsEditing(true);
   };
@@ -130,17 +228,7 @@ export default function MyProfile() {
     setIsEditing(false);
   };
 
-  // Utilities for testing Empty State
-  const handleClearProfile = () => {
-    setIsProfileDeleted(true);
-    setIsEditing(false);
-  };
 
-  const handleRecreateProfile = () => {
-    setProfile(INITIAL_MOCK_DATA);
-    setEditableProfile(INITIAL_MOCK_DATA);
-    setIsProfileDeleted(false);
-  };
 
   // Dynamic percentage & checklist calculations
   // Recalculates from editableProfile in edit mode so checklist/percentage update dynamically
@@ -203,38 +291,14 @@ export default function MyProfile() {
           <div className="toolbar-left">
             <h1 className="profile-page-title">My Profile</h1>
             <p className="profile-page-subtitle">
-              Manage your personal and professional information.
+              {readOnly ? "View student personal and professional information." : "Manage your personal and professional information."}
             </p>
           </div>
           <div className="toolbar-right">
-            {!isProfileDeleted ? (
-              <button
-                type="button"
-                className="utility-action-btn delete-test-btn"
-                onClick={handleClearProfile}
-                title="Test how the page looks with no profile data"
-              >
-                <ShieldAlertIcon size={14} />
-                <span>Simulate Empty State</span>
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="utility-action-btn restore-test-btn"
-                onClick={handleRecreateProfile}
-              >
-                <RefreshCwIcon size={14} />
-                <span>Restore Student Profile</span>
-              </button>
-            )}
           </div>
         </div>
 
-        {/* Main Content */}
-        {isProfileDeleted ? (
-          <EmptyProfile onRecreate={handleRecreateProfile} />
-        ) : (
-          <div className={`profile-sections-wrapper ${isEditing ? 'is-editing-mode' : ''}`}>
+        <div className={`profile-sections-wrapper ${isEditing ? 'is-editing-mode' : ''}`}>
             
             {/* 1. Profile Header Card */}
             <ProfileHeader
@@ -244,6 +308,7 @@ export default function MyProfile() {
               onEditClick={handleEditClick}
               onSave={handleSave}
               onCancel={handleCancel}
+              readOnly={readOnly}
             />
 
             {/* 2. Circular completion indicator */}
@@ -257,6 +322,7 @@ export default function MyProfile() {
                 onChange={handleFieldChange}
                 onSave={handleSave}
                 onCancel={handleCancel}
+                readOnly={readOnly}
               />
 
               <AcademicInformation academic={profile.academic} />
@@ -269,12 +335,14 @@ export default function MyProfile() {
                 isEditing={isEditing}
                 onAddSkill={handleAddSkill}
                 onRemoveSkill={handleRemoveSkill}
+                readOnly={readOnly}
               />
 
               <ProfessionalLinks
                 links={isEditing ? editableProfile.links : profile.links}
                 isEditing={isEditing}
                 onChange={handleLinkChange}
+                readOnly={readOnly}
               />
             </div>
 
@@ -283,6 +351,7 @@ export default function MyProfile() {
               resume={isEditing ? editableProfile.resume : profile.resume}
               isEditing={isEditing}
               onUploadSimulate={handleResumeReplace}
+              readOnly={readOnly}
             />
 
             {/* Bottom info banner */}
@@ -295,7 +364,6 @@ export default function MyProfile() {
               </div>
             </div>
           </div>
-        )}
       </div>
     </div>
   );
